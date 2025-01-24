@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://8df8ib4jv63j"]
+[gd_scene load_steps=2 format=3 uid="uid://8df8ib4jv63j"]
+
+[ext_resource type="PackedScene" uid="uid://cesq8yqcjbrb3" path="res://scenes/cannon.tscn" id="1_tm50d"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Cannon" parent="." instance=ExtResource("1_tm50d")]
+
+[node name="Camera2D" type="Camera2D" parent="Cannon"]
