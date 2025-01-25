@@ -1,4 +1,6 @@
 extends Node
 
-var score = 0 
-var health = 5
+var score = 49
+var health = 10
+
+var speed = 200

@@ -23,6 +23,11 @@ func _on_bubble_time_timeout() -> void:
 
 var canShoot = true
 func _process(delta: float) -> void:
+	if Global.score >= 50:
+		get_tree().change_scene_to_file("res://scenes/win.tscn")
+	
+	if Global.health <= 0:
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 	
 	if Input.is_action_just_pressed("click") and canShoot:
 		shoot()

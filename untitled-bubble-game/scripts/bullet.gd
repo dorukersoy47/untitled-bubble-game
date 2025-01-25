@@ -6,7 +6,7 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $ExplosionAnimation/AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-const SPEED = 1500
+const SPEED = 2000
 const RANGE = 1200
 
 var target :Vector2 

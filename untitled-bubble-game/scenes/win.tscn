@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccj8v1egbmnd2"]
+
+[ext_resource type="Texture2D" uid="uid://chshay8giwpkq" path="res://assets/sprites/Lebron.webp" id="1_rkowv"]
+[ext_resource type="FontFile" uid="uid://ce4vyeiqvdc7y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3gqxj"]
+[ext_resource type="AudioStream" uid="uid://dxiwyxe2dtkhf" path="res://assets/SFX/Hooray_Sound_Effect.mp3" id="3_5kq7q"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="4_4x5kl"]
+
+[node name="Win" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Lebron" type="Sprite2D" parent="."]
+position = Vector2(0.834778, 1.70132)
+scale = Vector2(2.29666, 2.30106)
+texture = ExtResource("1_rkowv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -545.0
+offset_top = -280.0
+offset_right = -114.0
+offset_bottom = -229.0
+theme_override_colors/font_color = Color(0.943609, 3.72532e-05, 0.67857, 1)
+theme_override_fonts/font = ExtResource("2_3gqxj")
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN!!!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5kq7q")
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = -280.0
+offset_top = 219.0
+offset_right = 253.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("2_3gqxj")
+theme_override_font_sizes/font_size = 35
+text = "PRESS TO RESTART"
+script = ExtResource("4_4x5kl")
