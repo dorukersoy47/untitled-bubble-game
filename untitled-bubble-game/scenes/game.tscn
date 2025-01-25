@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8df8ib4jv63j"]
+[gd_scene load_steps=6 format=3 uid="uid://8df8ib4jv63j"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_gtt3f"]
 [ext_resource type="PackedScene" uid="uid://b76b5sm1mp3h" path="res://scenes/ground.tscn" id="1_ra1so"]
 [ext_resource type="PackedScene" uid="uid://cesq8yqcjbrb3" path="res://scenes/cannon.tscn" id="1_tm50d"]
 [ext_resource type="PackedScene" uid="uid://bwc2cicm2l3j0" path="res://scenes/bullet.tscn" id="3_opcx6"]
+[ext_resource type="PackedScene" uid="uid://dxwvuxo6av2q2" path="res://scenes/bubble.tscn" id="5_kx4ac"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -1)
@@ -27,9 +28,12 @@ position = Vector2(17, 1.00006)
 rotation = 1.5708
 
 [node name="Ground" parent="." instance=ExtResource("1_ra1so")]
-position = Vector2(-5, -576)
+position = Vector2(-5, -11)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="bubble" parent="." instance=ExtResource("5_kx4ac")]
+position = Vector2(-165, -368)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

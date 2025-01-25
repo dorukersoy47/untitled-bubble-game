@@ -28,6 +28,8 @@ func _process(delta: float) -> void:
 			position = position.move_toward(target*10000, SPEED * delta)
 		if distanceTraveled >= RANGE:
 			stop_bullet()
+	else:
+		look_at(get_global_mouse_position())
 
 func start_bullet():
 	shoot_animation.show()
