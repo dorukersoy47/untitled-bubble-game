@@ -2,6 +2,10 @@ extends Area2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+const BULLET_LAYER = 2
+const GROUND_LAYER = 3
+const BUBBLE_LAYER = 4
+
 var speed= 300
 var got_hit = false
 
@@ -11,11 +15,11 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	got_hit = true
-	print(area.name)
-	if area.name == "Bullet":
-		print(Global.score)
+
+	if area.collision_layer & (1 << BULLET_LAYER) != 0:
 		Global.score += 1
-	if area.name == "Ground":
-		print(Global.health)
+		
+	if area.collision_layer & (1 << GROUND_LAYER) != 0:
 		Global.health -= 1
+		
 	animation_player.play("pop")
