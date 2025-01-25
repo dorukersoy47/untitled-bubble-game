@@ -525,7 +525,7 @@ wait_time = 0.5
 
 [node name="bubble" parent="." instance=ExtResource("5_kx4ac")]
 z_index = 27
-position = Vector2(-165, -368)
+position = Vector2(-165, -734)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(5, 5)
