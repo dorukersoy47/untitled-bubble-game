@@ -5,10 +5,14 @@ extends Node2D
 @onready var bubble_timer: Timer = $BubbleTimer
 @onready var cannon: CharacterBody2D = $Cannon
 @onready var marker_2d: Marker2D = %Marker2D
+@onready var music: AudioStreamPlayer2D = $Music
 
 var bubble_x
 var bubble_y
 var random = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	music.play()
 
 func _on_bubble_time_timeout() -> void:
 	var bubble = preload("res://scenes/bubble.tscn").instantiate()
@@ -19,6 +23,7 @@ func _on_bubble_time_timeout() -> void:
 
 var canShoot = true
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("click") and canShoot:
 		shoot()
 		bullet_timer.start(0.3)

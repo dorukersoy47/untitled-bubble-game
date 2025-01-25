@@ -1,14 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://8df8ib4jv63j"]
+[gd_scene load_steps=19 format=3 uid="uid://8df8ib4jv63j"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_gtt3f"]
 [ext_resource type="PackedScene" uid="uid://b76b5sm1mp3h" path="res://scenes/ground.tscn" id="1_ra1so"]
 [ext_resource type="PackedScene" uid="uid://cesq8yqcjbrb3" path="res://scenes/cannon.tscn" id="1_tm50d"]
 [ext_resource type="PackedScene" uid="uid://bwc2cicm2l3j0" path="res://scenes/bullet.tscn" id="3_opcx6"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="3_sgkus"]
+[ext_resource type="Script" path="res://scripts/points.gd" id="4_snt0g"]
 [ext_resource type="PackedScene" uid="uid://dxwvuxo6av2q2" path="res://scenes/bubble.tscn" id="5_kx4ac"]
 [ext_resource type="Texture2D" uid="uid://dntnkd6igv5bm" path="res://assets/Sprites/tileset.png" id="6_i8s6k"]
 [ext_resource type="Texture2D" uid="uid://c1ctipwyg3ta" path="res://assets/Sprites/parallax3.png" id="7_e4sr3"]
 [ext_resource type="Texture2D" uid="uid://v64sgg7gmm0w" path="res://assets/Sprites/parallax4.png" id="8_pg8xh"]
 [ext_resource type="Texture2D" uid="uid://cmo25u7eyjpb3" path="res://assets/Sprites/parallax2.png" id="9_nug88"]
+[ext_resource type="FontFile" uid="uid://ce4vyeiqvdc7y" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="10_7kvgf"]
+[ext_resource type="PackedScene" uid="uid://ce4b76gxyxvlt" path="res://scenes/music.tscn" id="13_5ilql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jmpe"]
 texture = ExtResource("6_i8s6k")
@@ -500,13 +504,33 @@ sources/3 = SubResource("TileSetAtlasSource_puda5")
 position = Vector2(0, -1)
 script = ExtResource("1_gtt3f")
 
+[node name="Health" type="Label" parent="."]
+offset_left = -531.0
+offset_top = -108.0
+offset_right = -191.0
+offset_bottom = -76.0
+theme_override_fonts/font = ExtResource("10_7kvgf")
+theme_override_font_sizes/font_size = 32
+text = "Health: 5"
+script = ExtResource("3_sgkus")
+
+[node name="Points" type="Label" parent="."]
+offset_left = 229.0
+offset_top = -637.0
+offset_right = 569.0
+offset_bottom = -605.0
+theme_override_fonts/font = ExtResource("10_7kvgf")
+theme_override_font_sizes/font_size = 32
+text = "Points: 0"
+script = ExtResource("4_snt0g")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4, -25)
 rotation = -1.5708
-offset = Vector2(0, -300)
 limit_left = -639
 limit_top = -700
 limit_right = 639
+limit_bottom = 0
 
 [node name="Bullet" parent="." instance=ExtResource("3_opcx6")]
 position = Vector2(0, -51)
@@ -527,7 +551,7 @@ position = Vector2(-5, -11)
 [node name="BulletTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="bubble" parent="." instance=ExtResource("5_kx4ac")]
+[node name="Bubble" parent="." instance=ExtResource("5_kx4ac")]
 z_index = 27
 position = Vector2(-165, -734)
 
@@ -557,6 +581,8 @@ layer_6/tile_data = PackedInt32Array(-262142, 1, 6, -262141, 65537, 6, -327677, 
 
 [node name="BubbleTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="Music" parent="." instance=ExtResource("13_5ilql")]
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="BubbleTimer" to="." method="_on_bubble_time_timeout"]

@@ -47,7 +47,6 @@ func stop_bullet():
 
 func _on_area_entered(area: Area2D) -> void:
 	if exploded == false:
-		collision_shape.disabled = true
 		stop_bullet()
 		explosion_animation.show()
 		explosion_animation.play("explode")
