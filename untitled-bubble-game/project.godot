@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="untitled bubble game"
-run/main_scene="res://scenes/cannon.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Bubble"
+2d_physics/layer_3="Bullet"
+2d_physics/layer_4="Cannon/Ground"
 
 [rendering]
 
