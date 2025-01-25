@@ -15,11 +15,12 @@ var is_moving = false
 var exploded = false
 
 func _ready():
+	shoot_animation.hide()
 	explosion_animation.hide()
 	explosion_animation.frame = 1
 
 func _process(delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not is_moving:
+	if Input.is_action_just_pressed("click") and not is_moving:
 		target = get_global_mouse_position()
 		start_bullet()
 	if is_moving:
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 			stop_bullet()
 
 func start_bullet():
+	shoot_animation.show()
 	audio_stream_player_2d.play()
 	is_moving = true
 	distanceTraveled = 0
