@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxwvuxo6av2q2"]
+[gd_scene load_steps=8 format=3 uid="uid://dxwvuxo6av2q2"]
 
 [ext_resource type="Script" path="res://scenes/bubble.gd" id="1_b0g3k"]
 [ext_resource type="Texture2D" uid="uid://nulyqh1b3lrs" path="res://assets/Sprites/bubbles.png" id="2_iov45"]
+[ext_resource type="AudioStream" uid="uid://dgbqno724n74j" path="res://assets/SFX/bubbleSound.wav" id="3_3n61x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_citgp"]
 radius = 15.0
@@ -39,7 +40,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
+"times": PackedFloat32Array(0.2667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -56,7 +57,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": null
+"stream": ExtResource("3_3n61x")
 }],
 "times": PackedFloat32Array(0)
 }
