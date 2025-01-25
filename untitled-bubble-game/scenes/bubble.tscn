@@ -10,7 +10,7 @@ radius = 15.0
 resource_name = "pop"
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("pop:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -39,7 +39,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -98,7 +98,7 @@ _data = {
 [node name="bubble" type="Area2D"]
 scale = Vector2(3, 3)
 collision_layer = 2
-collision_mask = 8
+collision_mask = 12
 script = ExtResource("1_b0g3k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
