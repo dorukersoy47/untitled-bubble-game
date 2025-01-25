@@ -12,6 +12,7 @@ const RANGE = 1200
 var target :Vector2 
 var distanceTraveled = 0
 var is_moving = false
+var moved = false
 var exploded = false
 
 func _ready():
@@ -20,7 +21,7 @@ func _ready():
 	explosion_animation.frame = 1
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click") and not is_moving:
+	if Input.is_action_just_pressed("click") and not is_moving and moved !=true:
 		target = get_global_mouse_position()
 		start_bullet()
 	if is_moving:
@@ -32,6 +33,7 @@ func _process(delta: float) -> void:
 		look_at(get_global_mouse_position())
 
 func start_bullet():
+	moved = true
 	shoot_animation.show()
 	audio_stream_player_2d.play()
 	is_moving = true

@@ -11,7 +11,6 @@ var bubble_y
 var random = RandomNumberGenerator.new()
 
 func _on_bubble_time_timeout() -> void:
-	print("your mother")
 	var bubble = preload("res://scenes/bubble.tscn").instantiate()
 	bubble_x = random.randf_range(-525, 525)
 	bubble_y = -700
