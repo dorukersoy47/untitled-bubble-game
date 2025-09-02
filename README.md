@@ -4,4 +4,5 @@ A fast-paced bubble shooter developed for the UCL Global Game Jam. Developed by 
 Try to shoot as many bubbles as you can!
 
 Game Jam Link: https://globalgamejam.org/games/2025/untitled-bubble-game-4
+
 Itchio Page Link: 
