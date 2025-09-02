@@ -5,4 +5,4 @@ Try to shoot as many bubbles as you can!
 
 Game Jam Link: https://globalgamejam.org/games/2025/untitled-bubble-game-4
 
-Itchio Page Link: 
+Itchio Page Link: https://dorukersoy47.itch.io/untitled-bubble-game
